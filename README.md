@@ -1,73 +1,113 @@
-# React + TypeScript + Vite
+# NeuraDyn Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Enterprise-grade automation systems that think, adapt, and scale.
 
-Currently, two official plugins are available:
+This repository contains the source code for the NeuraDyn marketing website, built with modern web technologies for performance and scalability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
 
-## React Compiler
+- **Framework**: [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd neuradyn-web
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start Development Server:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:5173`.
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/       # Global layout components (Navbar, Footer, Hero)
+│   ├── sections/     # Landing page sections (Industries, CTA, Features)
+│   └── utils/        # Utility components (ScrollToTop, HashScroll)
+├── pages/            # Top-level route pages
+│   ├── Home.tsx      # Main landing page
+│   ├── About.tsx     # About Us page
+│   ├── Contact.tsx   # Contact/Support page
+│   ├── Privacy.tsx   # Privacy Policy
+│   └── Terms.tsx     # Terms of Service
+├── App.tsx           # Main application component & Router config
+├── main.tsx          # Application entry point
+└── index.css         # Global styles & Tailwind directives
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎨 Customization
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Color Palette & Theme
+Styles are defined in `tailwind.config.js` and `index.css`.
+- **Primary**: `royal-blue`
+- **Background**: `deep-void`
+- **Accents**: `electric-cyan`
+
+To update branding colors, modify the `theme.extend.colors` section in `tailwind.config.js`.
+
+### Adding a New Page
+1. Create a new component in `src/pages/NewPage.tsx`.
+2. Import it in `src/App.tsx`.
+3. Add a new route:
+   ```tsx
+   <Route path="/new-page" element={<NewPage />} />
+   ```
+
+---
+
+## 📦 Building & Deployment
+
+### Build for Production
+Create an optimized production build:
+```bash
+npm run build
 ```
+The output will be in the `dist/` directory.
+
+### Deployment (Netlify)
+This project is configured for Netlify (`netlify.toml`).
+1. **Build Command**: `npm run build`
+2. **Publish Directory**: `dist`
+
+**Manual Deploy**: Drag and drop the `dist` folder into the Netlify dashboard.
+
+---
+
+## 🤝 Contribution Guidelines
+
+1. Create a feature branch (`git checkout -b feature/amazing-feature`).
+2. Commit your changes (`git commit -m 'Add some amazing feature'`).
+3. Push to the branch (`git push origin feature/amazing-feature`).
+4. Open a Pull Request.
+
+---
+
+© 2025 NeuraDyn AI Systems.
