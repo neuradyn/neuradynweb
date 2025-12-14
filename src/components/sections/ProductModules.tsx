@@ -57,7 +57,7 @@ const services = [
 
 const ProductModules = () => {
     return (
-        <section className="py-32 relative bg-deep-void" id="solutions">
+        <section className="py-32 relative bg-deep-void" id="solutions-section">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-32">

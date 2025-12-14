@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     const scrollToServices = () => {
-        const element = document.getElementById('solutions'); // Start at the first pillar
+        const element = document.getElementById('solutions-section'); // Start at the first pillar
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
