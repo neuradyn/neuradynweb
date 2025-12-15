@@ -30,10 +30,10 @@ const Navbar = () => {
     }, []);
 
     const services = [
-        { name: "Marketing Automation", href: "/#marketing-section" },
-        { name: "Finance Operation", href: "/#finance-section" },
-        { name: "Chatbot Customization", href: "/#chatbot-section" },
-        { name: "HR Automation", href: "/#hr-section" }
+        { name: "Marketing Automation", href: "/marketing" },
+        { name: "Finance Operation", href: "/finance" },
+        { name: "Chatbot Customization", href: "/chatbot" },
+        { name: "HR Automation", href: "/hr" }
     ];
 
     const handleHomeClick = () => {
@@ -88,21 +88,14 @@ const Navbar = () => {
                                     onMouseLeave={() => setServicesOpen(false)}
                                 >
                                     {services.map((service) => (
-                                        <a
+                                        <Link
                                             key={service.name}
-                                            href={service.href}
-                                            onClick={(e) => {
-                                                const element = document.getElementById(service.href.replace('/#', ''));
-                                                if (element) {
-                                                    e.preventDefault();
-                                                    element.scrollIntoView({ behavior: 'smooth' });
-                                                }
-                                                setServicesOpen(false);
-                                            }}
+                                            to={service.href}
+                                            onClick={() => setServicesOpen(false)}
                                             className="block px-4 py-3 text-sm text-mist-grey hover:text-white hover:bg-white/5 transition-colors"
                                         >
                                             {service.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </motion.div>
                             )}
@@ -165,21 +158,14 @@ const Navbar = () => {
                         <div className="py-2 border-b border-white/5">
                             <span className="text-white/50 text-sm uppercase tracking-wider font-bold mb-2 block">Solutions</span>
                             {services.map((service) => (
-                                <a
+                                <Link
                                     key={service.name}
-                                    href={service.href}
-                                    onClick={(e) => {
-                                        const element = document.getElementById(service.href.replace('/#', ''));
-                                        if (element) {
-                                            e.preventDefault();
-                                            element.scrollIntoView({ behavior: 'smooth' });
-                                        }
-                                        setMobileMenuOpen(false);
-                                    }}
+                                    to={service.href}
+                                    onClick={() => setMobileMenuOpen(false)}
                                     className="block py-2 text-white/80 hover:text-white pl-4"
                                 >
                                     {service.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
 

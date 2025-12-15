@@ -1,30 +1,24 @@
 import { motion } from 'framer-motion';
-import { Upload, Cpu, Globe, Activity } from 'lucide-react';
+import { Search, PenTool, Network } from 'lucide-react';
 
 const steps = [
     {
         id: "01",
-        title: "Connect",
-        desc: "Securely link your CRM, Ad Accounts, or Finance software.",
-        icon: Upload
+        title: "Discovery & Analysis",
+        desc: "We map your current workflows and technical infrastructure.",
+        icon: Search
     },
     {
         id: "02",
-        title: "Select",
-        desc: "Choose from pre-built workflows for Marketing, Finance, or Chatbots.",
-        icon: Cpu
+        title: "Custom Design",
+        desc: "We build automation architectures tailored to your unique goals.",
+        icon: PenTool
     },
     {
         id: "03",
-        title: "Activate",
-        desc: "Launch campaigns or automation agents instantly—no coding required.",
-        icon: Globe
-    },
-    {
-        id: "04",
-        title: "Scale",
-        desc: "Watch your efficiency soar with real-time optimization and reporting.",
-        icon: Activity
+        title: "Integration & Training",
+        desc: "We connect to your existing stack and train your team.",
+        icon: Network
     }
 ];
 
@@ -34,10 +28,10 @@ const HowItWorks = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-starlight-white">
-                        From Data to <span className="text-royal-blue">Action</span> in 4 Steps
+                        Our <span className="text-royal-blue">Consulting Approach</span>
                     </h2>
                     <p className="text-mist-grey max-w-2xl mx-auto text-lg font-light">
-                        We've simplified the complex process of building enterprise AI into a streamlined workflow.
+                        We don't just sell software. We design, build, and integrate custom automation systems that fit your business perfectly.
                     </p>
                 </div>
 
@@ -45,7 +39,7 @@ const HowItWorks = () => {
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {steps.map((step, index) => (
                             <motion.div
                                 key={index}

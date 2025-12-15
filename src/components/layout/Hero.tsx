@@ -29,11 +29,11 @@ const Hero = () => {
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <h1 className="text-5xl md:text-8xl font-bold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
-                        Intelligent Automation for Marketing, Finance, and Operations.
+                        Enterprise-Grade Automation for Marketing, HR, Finance, and Support.
                     </h1>
 
                     <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md mb-10">
-                        Streamline your business with AI-driven workflows—from instant content generation to automated financial compliance.
+                        From AI-driven ad insights and content factories to end-to-end employee lifecycle management. We build systems that think, adapt, and scale.
                     </p>
 
                     <button
