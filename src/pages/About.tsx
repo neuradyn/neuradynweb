@@ -20,7 +20,7 @@ const About = () => {
                         transition={{ delay: 0.1 }}
                         className="text-2xl text-slate-600 mb-12 font-light leading-relaxed"
                     >
-                        We are a specialized trio of engineers and strategists building the future of work.
+                        We are a specialized quartet of engineers and strategists building the future of work.
                     </motion.p>
                 </div>
 
@@ -35,7 +35,7 @@ const About = () => {
                             NeuraDyn was founded on a simple belief: you don't need a hundred employees to run a world-class operation, you just need the right intelligence.
                         </p>
                         <p className="text-lg text-slate-600 leading-relaxed mt-6">
-                            We are a lean team of three experts dedicated to one mission: transforming manual business chaos into streamlined AI automation. We don't just build software; we architect the digital systems that allow your business to scale without limits.
+                            We are a lean team of four experts dedicated to one mission: transforming manual business chaos into streamlined AI automation. We don't just build software; we architect the digital systems that allow your business to scale without limits.
                         </p>
                     </motion.div>
                 </div>

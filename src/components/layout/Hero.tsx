@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import heroBg from '../../assets/hero-bg.png';
 
 const Hero = () => {
     const scrollToServices = () => {
@@ -14,8 +15,8 @@ const Hero = () => {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2940&auto=format&fit=crop"
-                    alt="Serene Mountains"
+                    src={heroBg}
+                    alt="Hero Background"
                     className="w-full h-full object-cover"
                 />
                 {/* Gradient Overlay: Fade to Black at bottom */}
