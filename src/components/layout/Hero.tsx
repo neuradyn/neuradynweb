@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import heroBg from '../../assets/hero-bg.png';
+
 
 const Hero = () => {
     const scrollToServices = () => {
@@ -14,11 +14,15 @@ const Hero = () => {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <img
-                    src={heroBg}
-                    alt="Hero Background"
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover"
-                />
+                >
+                    <source src="https://pub-8c26ff9ad2d341368b81038803388707.r2.dev/Untitled%20video%20-%20Made%20with%20Clipchamp%20(15).mp4" type="video/mp4" />
+                </video>
                 {/* Gradient Overlay: Fade to Black at bottom */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#050510]" />
             </div>

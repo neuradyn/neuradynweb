@@ -1,184 +1,179 @@
 import { motion } from 'framer-motion';
 import {
     Image as LucideImage,
-    Mail,
     BarChart,
-    PenTool,
-    Share2,
-    Target,
-    TrendingUp,
-    Zap,
-    Clock
+    ShoppingBag,
+    Home,
+    Briefcase,
+    GraduationCap,
+    Search,
+    MessageSquare
 } from 'lucide-react';
 
 const Marketing = () => {
     const metrics = [
-        { label: "Campaign Deployment Speed", value: "Same-Day Launch" },
-        { label: "Content Production Time", value: "90-98% Faster" },
-        { label: "Reporting Speed", value: "10x Faster" }
+        { label: "Faster Production", value: "90%" },
+        { label: "Cost Savings", value: "60-85%" },
+        { label: "Faster Launch", value: "5-10x" },
+        { label: "More Conversions", value: "20-45%" }
+    ];
+
+    const workflows = [
+        {
+            title: "The Content Factory",
+            desc: "An end-to-end engine that automatically generates images, videos, and copywriting aligned with your brand voice, then schedules posts across all your digital channels.",
+            icon: LucideImage,
+            color: "text-blue-600",
+            bg: "bg-blue-50"
+        },
+        {
+            title: "Ads Performance Intelligence",
+            desc: "Instantly convert data from Meta, TikTok, and Google Ads into actionable insight reports in seconds, highlighting ROI and trends without manual data crunching.",
+            icon: BarChart,
+            color: "text-purple-600",
+            bg: "bg-purple-50"
+        },
+        {
+            title: "Lead Nurturing System",
+            desc: "Automated multi-stage email sequences and chatbot re-engagement flows that revive dormant leads and prevent lost opportunities.",
+            icon: MessageSquare,
+            color: "text-green-600",
+            bg: "bg-green-50"
+        },
+        {
+            title: "Competitor Monitoring",
+            desc: "Instantly capture and summarize competitor profiles and strategies from the web to give you faster market visibility.",
+            icon: Search,
+            color: "text-orange-600",
+            bg: "bg-orange-50"
+        }
+    ];
+
+    const useCases = [
+        {
+            title: "E-Commerce & Retail",
+            desc: "Launch daily product promotions and recover abandoned carts with automated follow-ups.",
+            icon: ShoppingBag
+        },
+        {
+            title: "Real Estate Agencies",
+            desc: "Automatically produce property video tours and listing descriptions to market homes faster.",
+            icon: Home
+        },
+        {
+            title: "Marketing Agencies",
+            desc: "Scale content production for multiple clients and generate performance reports in minutes instead of hours.",
+            icon: Briefcase
+        },
+        {
+            title: "Education Providers",
+            desc: "Automate course enrollment campaigns and nurture student inquiries from interest to sign-up.",
+            icon: GraduationCap
+        }
     ];
 
     return (
-        <div className="pt-20">
+        <div className="pt-20 bg-white">
             {/* Hero Section */}
-            <section className="relative py-24 bg-deep-void overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-royal-blue/20 via-transparent to-transparent" />
+            <section className="relative py-24 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-transparent to-transparent" />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-3xl"
+                        className="max-w-4xl"
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                            The <span className="text-royal-blue">Always-On</span> Marketing Engine.
+                        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                            Turn Your Marketing into an <span className="text-blue-600">Always-On Growth Engine.</span>
                         </h1>
-                        <p className="text-xl text-mist-grey mb-8 leading-relaxed">
-                            From instant content generation to real-time ad intelligence. Automate the repetitive work so you can focus on strategy.
+                        <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                            Launch campaigns 10x faster, reduce creative costs, and nurture leads automatically. Without increasing headcount.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Section 1: The AI Content Factory (Text Left, Image Right) */}
-            <section id="content-factory" className="py-24 bg-[#0B0F29]">
+            {/* Section 1: What We Do */}
+            <section className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
-                        {/* Left: Content */}
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Production at the <span className="text-royal-blue">Speed of AI.</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                                What We Do
                             </h2>
-                            <p className="text-lg text-mist-grey mb-8 leading-relaxed">
-                                Stop bottlenecking your growth with manual creative production. Our Content Management workflow automates the creation of on-brand assets.
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                                We replace manual content creation and data reporting with intelligent automation. From a "Content Factory" that generates on-brand assets to automated lead nurturing and ad performance tracking, we streamline your entire marketing lifecycle so you can focus on strategy, not execution.
                             </p>
-                            <div className="space-y-6">
-                                {[
-                                    { icon: LucideImage, title: "Image & Video Generation", desc: "Transform raw product inputs into marketing-ready visuals instantly." },
-                                    { icon: PenTool, title: "Auto-Copywriting", desc: "Generate high-converting copy for emails and landing pages that matches your brand voice." },
-                                    { icon: Share2, title: "Automated Posting", desc: "Schedule and publish across all channels from a single control point." }
-                                ].map((item, i) => (
-                                    <div key={i} className="flex gap-4">
-                                        <div className="mt-1">
-                                            <item.icon className="w-6 h-6 text-royal-blue" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-1">{item.title}</h4>
-                                            <p className="text-sm text-mist-grey">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
                         </div>
-                        {/* Right: Visual/Icon */}
                         <div className="lg:w-1/2 flex items-center justify-center">
                             <div className="relative w-full max-w-md">
-                                <div className="absolute inset-0 bg-royal-blue/20 blur-3xl rounded-full" />
+                                <div className="absolute inset-0 bg-blue-200 blur-3xl rounded-full opacity-50" />
                                 <img
-                                    src="/images/content-dashboard.png"
-                                    alt="Content Calendar Dashboard"
-                                    className="relative w-full h-auto drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] z-10 rounded-xl"
+                                    src="/images/marketing.png"
+                                    alt="Marketing Automation Dashboard"
+                                    className="relative w-full h-auto drop-shadow-2xl z-10 rounded-xl border border-gray-200"
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="py-24 bg-deep-void">
+
+            {/* Section 2: Key Workflows */}
+            <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-                        {/* Left: Visual/Icon */}
-                        <div className="lg:w-1/2">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-full" />
-                                <div className="relative bg-white/5 border border-white/10 rounded-3xl p-12 flex items-center justify-center aspect-square">
-                                    <BarChart className="w-32 h-32 text-purple-500" />
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Key Workflows</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {workflows.map((item, i) => (
+                            <div key={i} className="p-8 rounded-3xl border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all bg-white">
+                                <div className={`w-14 h-14 ${item.bg} rounded-2xl flex items-center justify-center mb-6 ${item.color}`}>
+                                    <item.icon className="w-7 h-7" />
                                 </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    {item.desc}
+                                </p>
                             </div>
-                        </div>
-                        {/* Right: Content */}
-                        <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Real-Time <span className="text-purple-500">ROI Visibility.</span>
-                            </h2>
-                            <p className="text-lg text-mist-grey mb-8 leading-relaxed">
-                                Eliminate the 8-12 hours spent weekly on spreadsheets. Get instant, automated reporting for your paid channels.
-                            </p>
-                            <div className="space-y-6">
-                                <div className="flex gap-4">
-                                    <div className="mt-1">
-                                        <Target className="w-6 h-6 text-purple-500" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold mb-1">Multi-Platform</h4>
-                                        <p className="text-sm text-mist-grey">Instant insights for Meta, TikTok, and Google Ads.</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="mt-1">
-                                        <Clock className="w-6 h-6 text-purple-500" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold mb-1">Speed</h4>
-                                        <p className="text-sm text-mist-grey">Reduce reporting time from days to minutes.</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="mt-1">
-                                        <Zap className="w-6 h-6 text-purple-500" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold mb-1">Optimization</h4>
-                                        <p className="text-sm text-mist-grey">Identify high-performing creatives and kill losing ads faster.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Section 3: Automated Growth & Nurturing */}
-            <section className="py-24 bg-[#0B0F29]">
+            {/* Section 3: Real-World Use Cases */}
+            <section className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Never Lose a Lead Again.</h2>
-                        <p className="text-xl text-mist-grey max-w-2xl mx-auto">
-                            Turn passive traffic into active revenue with intelligent background automation.
-                        </p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Real-World Use Cases</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Card A: Lead Nurturing */}
-                        <div className="glass-card p-10 rounded-3xl hover:border-royal-blue/30 transition-all text-center">
-                            <div className="w-16 h-16 bg-royal-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-royal-blue">
-                                <Mail className="w-8 h-8" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {useCases.map((item, i) => (
+                            <div key={i} className="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all">
+                                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 text-gray-900">
+                                    <item.icon className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                                <p className="text-sm text-gray-600">
+                                    {item.desc}
+                                </p>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">Lead Nurturing</h3>
-                            <p className="text-mist-grey leading-relaxed">
-                                Multi-stage email sequences to recover abandoned carts and re-engage cold leads.
-                            </p>
-                        </div>
-                        {/* Card B: Competitor Monitor */}
-                        <div className="glass-card p-10 rounded-3xl hover:border-purple-500/30 transition-all text-center">
-                            <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-purple-500">
-                                <TrendingUp className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">Competitor Monitoring</h3>
-                            <p className="text-mist-grey leading-relaxed">
-                                Track rival pricing, strategies, and social sentiment in real-time.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Impact Metrics */}
-            <section className="py-20 bg-deep-void border-t border-white/5">
+            <section className="py-20 bg-white border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900">Impact Metrics</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
                         {metrics.map((metric, index) => (
                             <div key={index} className="pt-8 md:pt-0 px-4">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{metric.value}</div>
-                                <div className="text-royal-blue font-medium uppercase tracking-wider text-sm">{metric.label}</div>
+                                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{metric.value}</div>
+                                <div className="text-gray-500 font-medium uppercase tracking-wider text-sm">{metric.label}</div>
                             </div>
                         ))}
                     </div>

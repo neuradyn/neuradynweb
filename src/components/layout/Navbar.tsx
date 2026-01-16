@@ -4,30 +4,11 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
-
-    // Pages that have a white background where we need dark text
-    const isLightPage = ['/about', '/contact', '/demo'].includes(location.pathname);
-
-    // Text color logic:
-    // If scrolled (dark navbar) -> White
-    // If NOT scrolled + Light Page -> Dark Slate
-    // If NOT scrolled + Dark Page -> White
-    const textColor = isScrolled || !isLightPage ? 'text-white' : 'text-slate-900';
-    const subTextColor = isScrolled || !isLightPage ? 'text-white/80' : 'text-slate-600';
-    const subTextColorHover = isScrolled || !isLightPage ? 'hover:text-white' : 'hover:text-royal-blue';
-    const burgerColor = isScrolled || !isLightPage ? 'text-white' : 'text-slate-900';
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const services = [
         { name: "Marketing Automation", href: "/marketing" },
@@ -42,16 +23,35 @@ const Navbar = () => {
         }
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 10) {
+                setIsVisible(true);
+            } else if (currentScrollY > lastScrollY) {
+                setIsVisible(false); // Scrolling down
+            } else {
+                setIsVisible(true); // Scrolling up
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#050510]/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#050510]/90 backdrop-blur-md border-b border-white/5 py-4 ${isVisible ? 'translate-y-0' : '-translate-y-full'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 cursor-pointer" onClick={handleHomeClick}>
                     <span className="text-xl font-heading font-bold tracking-tight drop-shadow-md transition-colors">
-                        <span className={textColor}>Neura</span>
+                        <span className="text-white">Neura</span>
                         <span className="text-royal-blue">Dyn</span>
                     </span>
                 </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                     <Link
                         to="/"
                         onClick={handleHomeClick}
-                        className={`${subTextColor} ${subTextColorHover} transition-colors text-sm font-medium drop-shadow-sm`}
+                        className="text-white/80 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
                     >
                         Home
                     </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
                     {/* Services Dropdown */}
                     <div className="relative group">
                         <button
-                            className={`flex items-center gap-1 ${subTextColor} ${subTextColorHover} transition-colors text-sm font-medium drop-shadow-sm focus:outline-none`}
+                            className="flex items-center gap-1 text-white/80 hover:text-white transition-colors text-sm font-medium drop-shadow-sm focus:outline-none"
                             onMouseEnter={() => setServicesOpen(true)}
                             onMouseLeave={() => setServicesOpen(false)}
                         >
@@ -104,14 +104,14 @@ const Navbar = () => {
 
                     <Link
                         to="/about"
-                        className={`${subTextColor} ${subTextColorHover} transition-colors text-sm font-medium drop-shadow-sm`}
+                        className="text-white/80 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
                     >
                         About Us
                     </Link>
 
                     <Link
                         to="/contact"
-                        className={`${subTextColor} ${subTextColorHover} transition-colors text-sm font-medium drop-shadow-sm`}
+                        className="text-white/80 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
                     >
                         Contact
                     </Link>
@@ -128,7 +128,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className={`md:hidden ${burgerColor}`}
+                    className="md:hidden text-white"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? <X /> : <Menu />}

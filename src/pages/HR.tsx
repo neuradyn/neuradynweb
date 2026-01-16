@@ -1,134 +1,170 @@
 import { motion } from 'framer-motion';
-import { Clock, UserPlus, FileText, Award, Calendar, CheckSquare, AlertCircle, LogOut } from 'lucide-react';
+import { Clock, UserPlus, FileText, Award, Calendar, CheckSquare, AlertCircle, LogOut, Users, Building2, Briefcase, ShieldCheck } from 'lucide-react';
 
 const HR = () => {
     const metrics = [
-        { label: "Time Saved", value: "75-90% Less Admin" },
-        { label: "Documentation", value: "95% Error Reduction" },
-        { label: "Onboarding Time", value: "3-5 Days" }
+        { label: "Faster Onboarding", value: "60-80%" },
+        { label: "Screening Capacity", value: "10x" },
+        { label: "Fewer Errors", value: "95%" },
+        { label: "Less Admin Time", value: "85-95%" }
+    ];
+
+    const workflows = [
+        {
+            title: "Onboarding & Offboarding",
+            desc: "A seamless flow that manages offer acceptance, document collection, and asset recovery. It ensures new hires are ready on Day 1 and departures are secure and organized.",
+            icon: UserPlus,
+            color: "text-blue-600",
+            bg: "bg-blue-50"
+        },
+        {
+            title: "Talent Acquisition",
+            desc: "Intelligent resume screening that parses and ranks candidates against job requirements, plus automated tracking for employee referral programs.",
+            icon: Users,
+            color: "text-purple-600",
+            bg: "bg-purple-50"
+        },
+        {
+            title: "Daily Operations",
+            desc: "Automated leave requests, approval routing, and payroll-ready timesheet tracking that eliminates spreadsheet confusion and calculation errors.",
+            icon: Clock,
+            color: "text-green-600",
+            bg: "bg-green-50"
+        },
+        {
+            title: "Performance & Development",
+            desc: "Structured performance review cycles with automated reminders, alongside a system to track mandatory training and certification expiries.",
+            icon: Award,
+            color: "text-orange-600",
+            bg: "bg-orange-50"
+        }
+    ];
+
+    const useCases = [
+        {
+            title: "High-Growth Startups",
+            desc: "Rapidly onboard new employees with consistent documentation and zero manual coordination during hiring peaks.",
+            icon: Building2
+        },
+        {
+            title: "Recruitment Teams",
+            desc: "Handle high-volume hiring by screening hundreds of resumes per day to identify the best fit instantly.",
+            icon: Briefcase
+        },
+        {
+            title: "Field & Remote Operations",
+            desc: "Track attendance and timesheets for distributed teams or shift-based workers without \"buddy punching\" or time theft.",
+            icon: Calendar
+        },
+        {
+            title: "Regulated Industries",
+            desc: "Ensure audit-ready compliance by automatically tracking certification renewals and required safety training.",
+            icon: ShieldCheck
+        }
     ];
 
     return (
-        <div className="pt-20">
+        <div className="pt-20 bg-white">
             {/* Hero Section */}
-            <section className="relative py-24 bg-deep-void overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
+            <section className="relative py-24 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-50 via-transparent to-transparent" />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-3xl"
+                        className="max-w-4xl"
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                            The Employee Lifecycle, <span className="text-royal-blue">Automated.</span>
+                        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                            Build a Better Employee Experience, <span className="text-emerald-600">From Offer Letter to Exit.</span>
                         </h1>
-                        <p className="text-xl text-mist-grey mb-8 leading-relaxed">
-                            Streamline every stage of your workforce management—from recruitment to offboarding—without the paperwork.
+                        <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                            Automate onboarding, eliminate manual compliance tracking, and screen talent 10x faster so you can focus on people, not paperwork.
                         </p>
-
                     </motion.div>
                 </div>
             </section>
 
-            {/* Section 1: Recruitment & Onboarding */}
-            <section id="recruitment" className="py-24 bg-[#0B0F29]">
+            {/* Section 1: What We Do */}
+            <section className="py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+                        <div className="lg:w-1/2">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                                What We Do
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                                We automate the administrative heavy lifting of Human Resources. Our systems handle the entire employee lifecycle. Onboarding, daily operations, talent acquisition, and offboarding. Ensuring compliance and a professional experience without the manual coordination.
+                            </p>
+                        </div>
+                        <div className="lg:w-1/2 flex items-center justify-center">
+                            <div className="relative w-full max-w-md">
+                                <div className="absolute inset-0 bg-emerald-200 blur-3xl rounded-full opacity-50" />
+                                <img
+                                    src="/images/hr.png"
+                                    alt="HR Automation Dashboard"
+                                    className="relative w-full h-auto drop-shadow-2xl z-10 rounded-xl border border-gray-200"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section 2: Key Workflows */}
+            <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Acquire Talent, <span className="text-emerald-400">Faster.</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Key Workflows</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { icon: UserPlus, title: "Resume Screening", desc: "Auto-filter 1,000+ resumes daily based on objective criteria." },
-                            { icon: FileText, title: "Smart Onboarding", desc: "Automate document collection and task assignment, reducing setup time from weeks to 3-5 days." },
-                            { icon: Award, title: "Referral Program", desc: "Track employee referrals and automate bonus calculations transparently." }
-                        ].map((item, i) => (
-                            <div key={i} className="glass-card p-8 rounded-2xl hover:border-emerald-400/30 transition-all group">
-                                <div className="w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
-                                    <item.icon className="w-6 h-6" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {workflows.map((item, i) => (
+                            <div key={i} className="p-8 rounded-3xl border border-gray-100 hover:border-emerald-100 hover:shadow-lg transition-all bg-white">
+                                <div className={`w-14 h-14 ${item.bg} rounded-2xl flex items-center justify-center mb-6 ${item.color}`}>
+                                    <item.icon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                                <p className="text-mist-grey leading-relaxed">{item.desc}</p>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    {item.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Section 2: Workforce Operations */}
-            <section className="py-24 bg-deep-void">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-                        <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Streamline <span className="text-royal-blue">Daily Management.</span>
-                            </h2>
-                            <div className="space-y-8">
-                                {[
-                                    { icon: Calendar, title: "Leave Automation", desc: "Instant routing and approval for leave requests with real-time balance tracking." },
-                                    { icon: Clock, title: "Smart Timesheets", desc: "Auto-capture attendance and work hours to eliminate payroll errors." },
-                                    { icon: CheckSquare, title: "Performance Reviews", desc: "Structured, automated review cycles that ensure on-time completion." }
-                                ].map((item, i) => (
-                                    <div key={i} className="flex gap-6">
-                                        <div className="w-12 h-12 bg-royal-blue/10 rounded-full flex items-center justify-center flex-shrink-0 text-royal-blue">
-                                            <item.icon className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                                            <p className="text-mist-grey">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="lg:w-1/2">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-royal-blue/20 blur-3xl rounded-full" />
-                                <div className="relative bg-white/5 border border-white/10 rounded-3xl p-12 flex items-center justify-center aspect-square">
-                                    <Clock className="w-32 h-32 text-royal-blue" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 3: Compliance & Offboarding */}
-            <section className="py-24 bg-[#0B0F29]">
+            {/* Section 3: Real-World Use Cases */}
+            <section className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Protect Your Organization</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Real-World Use Cases</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <div className="glass-card p-10 rounded-3xl hover:border-red-500/30 transition-all text-center">
-                            <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500">
-                                <AlertCircle className="w-8 h-8" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {useCases.map((item, i) => (
+                            <div key={i} className="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all">
+                                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 text-gray-900">
+                                    <item.icon className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                                <p className="text-sm text-gray-600">
+                                    {item.desc}
+                                </p>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">Training Tracker</h3>
-                            <p className="text-mist-grey leading-relaxed">
-                                Monitor certification expiries and assign mandatory compliance courses automatically.
-                            </p>
-                        </div>
-                        <div className="glass-card p-10 rounded-3xl hover:border-red-500/30 transition-all text-center">
-                            <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500">
-                                <LogOut className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">Secure Offboarding</h3>
-                            <p className="text-mist-grey leading-relaxed">
-                                Systematically revoke access and track asset recovery when an employee leaves.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Impact Metrics */}
-            <section className="py-20 bg-deep-void border-t border-white/5">
+            <section className="py-20 bg-white border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900">Impact Metrics</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
                         {metrics.map((metric, index) => (
                             <div key={index} className="pt-8 md:pt-0 px-4">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{metric.value}</div>
-                                <div className="text-royal-blue font-medium uppercase tracking-wider text-sm">{metric.label}</div>
+                                <div className="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">{metric.value}</div>
+                                <div className="text-gray-500 font-medium uppercase tracking-wider text-sm">{metric.label}</div>
                             </div>
                         ))}
                     </div>
