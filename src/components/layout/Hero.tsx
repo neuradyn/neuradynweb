@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -34,19 +35,27 @@ const Hero = () => {
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <h1 className="text-5xl md:text-8xl font-bold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
-                        Enterprise-Grade Automation for Marketing, HR, Finance, and Support.
+                        Your Time Is Valuable. Let's Automate the Rest.
                     </h1>
 
                     <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md mb-10">
-                        From AI-driven ad insights and content factories to end-to-end employee lifecycle management. We build systems that think, adapt, and scale.
+                        We build custom AI ecosystems that adapt to your existing workflows. Eliminate manual tasks, reduce operational costs, and scale without increasing headcount.
                     </p>
 
-                    <button
-                        onClick={scrollToServices}
-                        className="group px-8 py-3 bg-royal-blue hover:bg-blue-600 text-white rounded-full transition-all flex items-center gap-2 mx-auto shadow-lg hover:shadow-blue-500/25"
-                    >
-                        View Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button
+                            onClick={scrollToServices}
+                            className="group px-8 py-3 bg-royal-blue hover:bg-blue-600 text-white rounded-full transition-all flex items-center gap-2 shadow-lg hover:shadow-blue-500/25"
+                        >
+                            See Our Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                        <Link
+                            to="/contact"
+                            className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full transition-all backdrop-blur-sm"
+                        >
+                            Book a Strategy Call
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </section>

@@ -3,8 +3,8 @@ import { Settings, Brain, MessageSquare, BarChart3, Rocket } from 'lucide-react'
 
 const features = [
     {
-        title: "Workflow Automation Core",
-        desc: "Self-healing logic that automates complex tasks in Finance and HR without human intervention.",
+        title: "Tailored to Your Workflow",
+        desc: "We don't force you to change how you work. We design automation that fits your existing processes.",
         icon: Settings,
         color: "text-electric-cyan",
         bg: "bg-electric-cyan/10"
@@ -31,8 +31,8 @@ const features = [
         bg: "bg-royal-blue/10"
     },
     {
-        title: "Seamless Integration",
-        desc: "Connects effortlessly with your existing CRM, ERP, and Google/Microsoft workspaces.",
+        title: "Deep System Integration",
+        desc: "We connect the dots between your CRM, ERP, Inventory, and Payment systems so data flows automatically.",
         icon: Rocket,
         color: "text-electric-cyan",
         bg: "bg-electric-cyan/10"
@@ -45,7 +45,7 @@ const ValueProps = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-starlight-white">
-                        Powered by <span className="text-electric-cyan">Next-Gen Automation.</span>
+                        Why Businesses Choose Neuradyn
                     </h2>
                     <p className="text-mist-grey max-w-2xl mx-auto text-lg font-light">
                         A complete suite of AI tools designed to integrate seamlessly into your business operations.

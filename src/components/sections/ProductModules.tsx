@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const services = [
     {
         id: "marketing-section",
-        title: "Marketing Automation Suite",
-        desc: "A complete engine for content, leads, and intelligence.",
+        title: "Marketing Content Factory",
+        desc: "Launch campaigns 10x faster. Automatically generate on-brand images, video, and copy, and track ad ROI across Meta & TikTok instantly.",
         href: "/marketing",
         icon: Zap,
         color: "text-electric-cyan",
@@ -19,8 +19,8 @@ const services = [
     },
     {
         id: "hr-section",
-        title: "HR Automation Ecosystem",
-        desc: "Streamline the entire employee lifecycle from hire to retire.",
+        title: "HR Lifecycle Automation",
+        desc: "From hire to retire. Screen 500+ resumes daily, automate onboarding documents, and track attendance without spreadsheet chaos.",
         href: "/hr",
         icon: Users,
         color: "text-emerald-400",
@@ -33,8 +33,8 @@ const services = [
     },
     {
         id: "finance-section",
-        title: "Finance Operation Automation",
-        desc: "Safeguard cash flow and eliminate manual data entry.",
+        title: "Finance & Payables Pilot",
+        desc: "Stop chasing invoices. Capture bills via OCR, automate payment reminders, and ensure 100% accuracy in your cash flow tracking.",
         href: "/finance",
         icon: FileText,
         color: "text-royal-blue",
@@ -46,8 +46,8 @@ const services = [
     },
     {
         id: "chatbot-section",
-        title: "Chatbot Customization & Integration",
-        desc: "Bespoke conversational agents tailored to your specific workflow.",
+        title: "Integrated Business Agents",
+        desc: "Not just a chat bot. A fully integrated assistant that checks stock, books appointments, and processes payments in real-time.",
         href: "/chatbot",
         icon: MessageSquare,
         color: "text-purple-400",
