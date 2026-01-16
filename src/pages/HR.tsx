@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Clock, UserPlus, FileText, Award, Calendar, CheckSquare, AlertCircle, LogOut, Users, Building2, Briefcase, ShieldCheck } from 'lucide-react';
+import { Clock, UserPlus, Award, Calendar, Users, Building2, Briefcase, ShieldCheck } from 'lucide-react';
 
 const HR = () => {
     const metrics = [

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Network, Database, Calendar, ShoppingBag, Headphones, Globe, UserCheck, Zap, Layers } from 'lucide-react';
+import { Network, Calendar, ShoppingBag, Headphones, Globe, UserCheck, Zap, Layers } from 'lucide-react';
 
 const Chatbot = () => {
     const metrics = [
