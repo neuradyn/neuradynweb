@@ -1,44 +1,71 @@
 # NeuraDyn Web Application
 
-> Enterprise-grade automation systems that think, adapt, and scale.
+> **Enterprise-grade automation systems that think, adapt, and scale.**
 
-This repository contains the source code for the NeuraDyn marketing website, built with modern web technologies for performance and scalability.
+NeuraDyn is a high-performance react web application designed to showcase custom AI ecosystems. It demonstrates solutions for Marketing, HR, Finance, and Chatbot automation, emphasizing speed, efficiency, and seamless integration.
+
+## 🚀 Features
+
+-   **Modern UI/UX**: Built with React and Framer Motion for smooth, engaging animations.
+-   **Responsive Design**: Fully responsive layout optimized for all devices using Tailwind CSS.
+-   **Performance First**:
+    -   **WebP Images**: All media assets are optimized for low bandwidth.
+    -   **Lazy Loading**: Critical assets load instantly; secondary assets load on demand.
+    -   **Compression**: Production builds are Gzip-compressed for minimal transfer size.
+-   **SEO Optimized**: Semantic HTML and meta tags for better search engine visibility.
 
 ## 🛠 Tech Stack
 
-- **Framework**: [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Routing**: [React Router DOM](https://reactrouter.com/)
+-   **Framework**: [React](https://react.dev/) (v19) via [Vite](https://vitejs.dev/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Routing**: [React Router DOM](https://reactrouter.com/)
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn
+
+-   Node.js (v18 or higher)
+-   npm (v9 or higher)
 
 ### Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd neuradyn-web
-   ```
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd neuradyn-web
+    ```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # Note: If you see legacy peer deps warnings, use:
+    # npm install --legacy-peer-deps
+    ```
 
-3. **Start Development Server:**
-   ```bash
-   npm run dev
-   ```
-   The site will be available at `http://localhost:5173`.
+3.  **Start Development Server:**
+    ```bash
+    npm run dev
+    ```
+    The site will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+This command will:
+1.  Compile TypeScript code.
+2.  Bundle assets with Vite.
+3.  Generate Gzip-compressed files (`.gz`) for text assets.
+4.  Output everything to the `dist/` directory.
 
 ---
 
@@ -46,68 +73,44 @@ This repository contains the source code for the NeuraDyn marketing website, bui
 
 ```
 src/
+├── assets/           # Static assets (images, logos)
 ├── components/
-│   ├── layout/       # Global layout components (Navbar, Footer, Hero)
-│   ├── sections/     # Landing page sections (Industries, CTA, Features)
-│   └── utils/        # Utility components (ScrollToTop, HashScroll)
-├── pages/            # Top-level route pages
-│   ├── Home.tsx      # Main landing page
-│   ├── About.tsx     # About Us page
-│   ├── Contact.tsx   # Contact/Support page
-│   ├── Privacy.tsx   # Privacy Policy
-│   └── Terms.tsx     # Terms of Service
-├── App.tsx           # Main application component & Router config
-├── main.tsx          # Application entry point
-└── index.css         # Global styles & Tailwind directives
+│   ├── layout/       # Global shell (Navbar, Footer, Hero)
+│   ├── sections/     # Landing page modules (Credibility, Testimonials)
+│   └── utils/        # Helpers (ScrollToTop, HashScroll)
+├── pages/            # Route components (Home, Marketing, HR, etc.)
+├── App.tsx           # Main router configuration
+└── main.tsx          # Entry point
 ```
 
 ---
 
-## 🎨 Customization
+## 🚀 Performance Optimizations
 
-### Color Palette & Theme
-Styles are defined in `tailwind.config.js` and `index.css`.
-- **Primary**: `royal-blue`
-- **Background**: `deep-void`
-- **Accents**: `electric-cyan`
+This project includes several automated optimizations to ensure fast load times and low bandwidth usage:
 
-To update branding colors, modify the `theme.extend.colors` section in `tailwind.config.js`.
-
-### Adding a New Page
-1. Create a new component in `src/pages/NewPage.tsx`.
-2. Import it in `src/App.tsx`.
-3. Add a new route:
-   ```tsx
-   <Route path="/new-page" element={<NewPage />} />
-   ```
+1.  **Media Diet**: Large PNG/JPG images have been converted to **WebP**. The original files are backed up in `_backup/`.
+2.  **Lazy Loading**: Images and iframes below the fold are set to `loading="lazy"`.
+3.  **Hero Video**: The hero video uses a lightweight **WebP poster** image and `preload="auto"` for instant perceived loading.
+4.  **Source Maps**: Disabled in production builds to reduce artifact size.
+5.  **Gzip Compression**: `vite-plugin-compression` is configured to compress build assets automatically.
 
 ---
 
-## 📦 Building & Deployment
+## ☁️ Deployment
 
-### Build for Production
-Create an optimized production build:
-```bash
-npm run build
-```
-The output will be in the `dist/` directory.
+This project is configured for **Netlify**.
 
-### Deployment (Netlify)
-This project is configured for Netlify (`netlify.toml`).
-1. **Build Command**: `npm run build`
-2. **Publish Directory**: `dist`
+-   **Build Command**: `npm run build`
+-   **Publish Directory**: `dist`
+-   **Configuration**: Settings are defined in `netlify.toml`.
 
-**Manual Deploy**: Drag and drop the `dist` folder into the Netlify dashboard.
+To deploy manually:
+1.  Run `npm run build`.
+2.  Drag and drop the `dist` folder into the Netlify dashboard.
 
 ---
 
-## 🤝 Contribution Guidelines
+## License
 
-1. Create a feature branch (`git checkout -b feature/amazing-feature`).
-2. Commit your changes (`git commit -m 'Add some amazing feature'`).
-3. Push to the branch (`git push origin feature/amazing-feature`).
-4. Open a Pull Request.
-
----
-
-© 2025 NeuraDyn AI Systems.
+© 2025 NeuraDyn AI Systems. All rights reserved.

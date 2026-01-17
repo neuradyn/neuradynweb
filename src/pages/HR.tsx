@@ -100,8 +100,9 @@ const HR = () => {
                             <div className="relative w-full max-w-md">
                                 <div className="absolute inset-0 bg-emerald-200 blur-3xl rounded-full opacity-50" />
                                 <img
-                                    src="/images/hr.png"
+                                    src="/images/hr.webp"
                                     alt="HR Automation Dashboard"
+                                    loading="lazy"
                                     className="relative w-full h-auto drop-shadow-2xl z-10 rounded-xl border border-gray-200"
                                 />
                             </div>

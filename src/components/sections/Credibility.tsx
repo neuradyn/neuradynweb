@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 const stats = [
     {
-        label: "Same-Day Launch",
-        value: "< 24 Hrs",
-        context: "Pre-configured workflows"
+        label: "DEPLOYMENT",
+        value: "Rapid",
+        context: "Go-to-market FASTER"
     },
     {
         label: "Manual Work Reduction",
